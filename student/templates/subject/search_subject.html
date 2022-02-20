@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body>
+    
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Himal Darshan</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            th, td {
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {background-color: #f2f2f2;}
+            </style>
+    </head>
+    <body>
+      {% for subject in subject_list %}
+ 
+       <h2 class=" text-primary text-center">Search Result for {{subject.name}}</h2>
+
+
+       <div style="overflow-x: auto;">
+         <table>
+           <tr>
+             <th>Id</th>
+             <th>Subject</th>
+             <th>Subject Code</th>
+             <th>Credit Hour</th>
+             <th>Grade Point</th>
+             <th>Grade</th>
+             <th>Final Grade</th>
+             <th>Remarks</th>
+             <th><i class="bi bi-pencil-square">Edit</i></th>
+             <th><i class="bi bi-x-lg">Delete</i></th>
+            
+             
+           </tr>
+          
+           <tr>
+             <td>{{ subject.id }}</td>
+             <td>{{subject.subjects}}</td>
+             <td>{{subject.subject_code}}</td>
+             <td>{{subject.credit_hour}}</td>
+             <td>{{subject.grade_point}}</td>
+             <td>{{subject.grade}}</td>
+             <td>{{subject.final_grade}}</td>
+             <td>{{subject.remarks}}</td>
+             <td>{{subject.total_gpa}}
+             <td><a href = "{% url 'updateSubject' subject.id %}">Edit</a></td>
+             <td><a href = "{% url 'delete_subject' subject.id %}">Delete</a></td>
+             
+             
+           
+           </tr>
+         {% endfor %}
+         </table>
+
+       
+       </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>

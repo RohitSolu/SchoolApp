@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Himal Darshan</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="">
+       
+    </head>
+        <p class="h3 text-center">Are you sure to delete this? </p>
+
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="text-center">
+            <input class="mb-2 btn btn-danger a-btn-slide-text" type="submit" name="create-detail" value="Delete">
+        </form>
+        <br>
+        <button type="button" class="mb-2 btn btn-info"><a class="text-decoration-none" href="{% url 'detail_for_marks'%}">Back</a></button>
+
+  
+    </div>
+        <script src="" async defer></script>
+    </body>
+</html>

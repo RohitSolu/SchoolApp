@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    .outer-border {
+        width: 1000px;
+        height: 1300px;
+        padding-left: 20px;
+        padding-right: 45px;
+        
+        border: 10px solid blue;
+        margin-left: 8%
+    }
+    
+    .inner-dotted-border {
+        width: 950px;
+        height: 1250px;
+        padding: 20px;
+        padding-right: 45px;
+        margin: 30px
+        border: 5px solid blue;
+        border-style: dotted
+    }
+    
+    .certification {
+      display: block;
+        font-size: 30px;
+        test-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+        color: blue
+    }
+    .certification1 {
+      display: block;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        color: blue
+    }
+    .certify {
+        font-size: 25px
+    }
+    
+    .name {
+        font-size: 30px;
+        color: green
+    }
+    
+    .fs-30 {
+        font-size: 30px
+    }
+    
+    .fs-20 {
+        font-size: 20px
+    }
+</style>
+  </head>
+  <body>
+    <div class="outer-border row d-flex justify-content-center col-md-6">
+      
+        <div class="inner-dotted-border"> 
+            <span class="certification text-center">Shree Himal Darshan Secondary School</span> 
+            <p><span class="certification1">Necha Salyan-3, Solukhumbu</span> </p>
+            
+     
+
+            <br><br> 
+            {% for subject in subject_list %}
+The grades secured by:  <b>  {{subject.name}}  </b> Roll no:  <b>{{subject.roll}}</b>  Grade:  <b>  {{subject.cls}}  </b>  In the annual Examination conducted in
+            (  <b>  {{student.date_of_exam}}  </b>  A.D) are given below.
+            
+
+            
+            <br>
+<h2 style="text-align: center;"><b>Grade Sheet</b></h2>
+
+  
+        <div style="overflow-x: auto;">
+         <table class="table table-bordered border-primary">
+           <tr>
+             <th>Id</th>
+             <th>Subject</th>
+             <th>Subject Code</th>
+             <th>Credit Hour</th>
+             <th>Grade Point</th>
+             <th>Grade</th>
+             <th>Final Grade</th>
+             <th>Remarks</th>
+             
+            
+             
+           </tr>
+          
+           <tr>
+             <td>{{ subject.id }}</td>
+             <td>{{subject.subjects}}</td>
+             <td>{{subject.subject_code}}</td>
+             <td>{{subject.credit_hour}}</td>
+             <td>{{subject.grade_point}}</td>
+             <td>{{subject.grade}}</td>
+             <td>{{subject.final_grade}}</td>
+             <td>{{subject.remarks}}</td>
+
+             
+             
+           
+           </tr>
+          </table>
+         
+        </div>
+      
+<br>
+<div class="d-block border float-left">
+<p class="h5">Grade Point Average: {{subject.total_gpa}}</p>
+<p class="h5">Completed</p>
+</div>   
+  
+  <br>
+  <div class="border">
+  <div class="float-left h5 p-1">Head Teacher</div>
+  <div class="float-left h5">Ashok Kumar Sharma</div>
+  </div>
+  <p class="h5">Date of Issue:- .........</p>
+ 
+  {% endfor %}
+  
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6 pb-4">
+              <div class="border card h-100">
+  <ol>
+    <li>One Credit Hour equals 32 Clock Hours.</li>
+    <li>TH: Theory, PR: Practical</li>
+    <li><ul>
+      <li>*@: Absent</li>
+      <li>*C: Copy Cancelled</li>
+      <li>*T: Theory Grade Missing</li>
+      <li>*Practical</li>
+      </li>
+    </ol>
+       
+       
+</div>
+</div>
+<hr>
+       <p><b>Note:</b></p>
+</div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>
